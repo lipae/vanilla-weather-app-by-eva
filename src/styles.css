@@ -1,4 +1,12 @@
-h1 {
+.app-size {
   font-family: "Courier New", Courier, monospace;
-  color: cadetblue;
+  max-width: 600px;
+  border: solid 1px #afb4b9;
+  border-radius: 4px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.col-sm-6 {
+  padding-right: 0px;
 }
