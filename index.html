@@ -14,52 +14,60 @@
     <title>Weather</title>
   </head>
   <body>
-    <div class="container">
-      <div class="app-size">
-        <form>
-          <div class="row" id="search-form">
-            <div class="col-sm-6">
-              <input
-                type="text"
-                class="form-control"
-                id="city-searchfield"
-                placeholder="Current weather in..."
+    <div class="background">
+      <img
+        src="img/weather-backgrounds/lucas-carl-PQfuavIwNGM-unsplash.jpg"
+        alt="bluesky small clouds"
+        id="background-image"
+      />
+      <!-- </div> -->
+      <div class="container" id="container-position">
+        <div class="app-size">
+          <form>
+            <div class="row" id="search-form">
+              <div class="col-sm-6">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="city-searchfield"
+                  placeholder="Current weather in..."
+                />
+              </div>
+              <div class="col-sm-2">
+                <button type="submit" class="btn btn-primary">Search</button>
+              </div>
+              <div class="col-sm-4">
+                <button type="submit" class="btn btn-primary">
+                  my location 🌍
+                </button>
+              </div>
+            </div>
+          </form>
+          <div class="row">
+            <div class="col-4">
+              <img
+                src="img/sunny.png"
+                id="weather-icon"
+                alt="icon showing current weather"
               />
+              <p class="date-section">
+                last updated <br />
+                current date
+              </p>
             </div>
-            <div class="col-sm-2">
-              <button type="submit" class="btn btn-primary">Search</button>
-            </div>
-            <div class="col-sm-4">
-              <button type="submit" class="btn btn-primary">
-                my location 🌍
-              </button>
-            </div>
-          </div>
-        </form>
-        <div class="row">
-          <div class="col-4">
-            <img
-              src="img/sunny.png"
-              id="weather-icon"
-              alt="icon showing current weather"
-            />
-            <p class="date-section">
-              last updated <br />
-              current date
-            </p>
-          </div>
-          <div class="col-8">
-            <h3 class="city-name">City Name</h3>
-            <span class="degree-section"
-              ><span id="degrees">35</span>
-              <span id="units">°C|°F</span>
-            </span>
+            <div class="col-8">
+              <h3 class="city-name">City Name</h3>
+              <span class="degree-section"
+                ><span id="degrees">35</span>
+                <span id="units">°C|°F</span>
+              </span>
 
-            <ul>
-              <li id="weatherDescription">☀️ sunny</li>
-              <li id="windElement">🌬 wind</li>
-              <li id="humidityElement">💦 humidity</li>
-            </ul>
+              <ul>
+                <li id="weatherDescription">☀️ sunny</li>
+                <li id="windElement">🌬 wind</li>
+                <li id="humidityElement">💦 humidity</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
