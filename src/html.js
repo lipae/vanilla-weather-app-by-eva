@@ -23,7 +23,7 @@ function showCurrentWeather(response) {
 }
 city = "San Diego";
 apiKey = "2ef21ee4568e04db5d3af37dfef78d7b";
-apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(showCurrentWeather);
 
 function handlePosition(position) {
@@ -46,7 +46,7 @@ function showSearchCityWeather(event) {
   event.preventDefault();
   let newCity = document.querySelector("#city-searchfield").value;
   apiKey = "2ef21ee4568e04db5d3af37dfef78d7b";
-  apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${newCity}&appid=${apiKey}&units=metric`;
+  apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${newCity}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showCurrentWeather);
 }
 
