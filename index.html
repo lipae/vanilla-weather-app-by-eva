@@ -17,7 +17,7 @@
   <body>
     <div class="background">
       <img
-        src="img/weather-backgrounds/lucas-carl-PQfuavIwNGM-unsplash.jpg"
+        src="img/weather-backgrounds/scattered-clouds.jpg"
         alt="bluesky small clouds"
         id="background-image"
       />
@@ -26,7 +26,7 @@
         <div class="app-size" id="container-position">
           <form>
             <div class="row" id="search-form">
-              <div class="col-sm-6">
+              <div class="col-sm-6 searchbar-section">
                 <input
                   type="text"
                   class="form-control"
@@ -55,18 +55,19 @@
             </div>
           </form>
           <div class="row">
-            <div class="col-4">
+            <div class="col-5 icon-section">
               <img
                 src="img/sunny.png"
                 id="weather-icon"
                 alt="icon showing current weather"
               />
-              <p class="date-section">
-                last updated <br />
-                current date
-              </p>
+              <div class="date-section">
+                <p>last updated</p>
+                <p></p>
+                <p id="date"></p>
+              </div>
             </div>
-            <div class="col-8">
+            <div class="col-7 weather-section">
               <h3 class="city-name">San Diego</h3>
               <span class="degree-section"
                 ><span id="degrees"></span>

@@ -1,3 +1,8 @@
+let timeElapsed = Date.now();
+let today = new Date(timeElapsed);
+
+document.querySelector("#date").innerHTML = today.toUTCString();
+
 function showCurrentWeather(response) {
   document.querySelector(".city-name").innerHTML = response.data.name;
   document.querySelector("#degrees").innerHTML = Math.round(
@@ -10,6 +15,11 @@ function showCurrentWeather(response) {
   );
   document.querySelector("#humidityElement").innerHTML =
     response.data.main.humidity;
+
+  // function weatherIcon(response) {
+
+  // }
+  //     document.querySelector("#weather-icon").innerHTML =
 }
 city = "San Diego";
 apiKey = "2ef21ee4568e04db5d3af37dfef78d7b";
