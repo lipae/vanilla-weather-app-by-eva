@@ -17,7 +17,7 @@
     <div class="container">
       <div class="app-size">
         <form>
-          <div class="row">
+          <div class="row" id="search-form">
             <div class="col-sm-6">
               <input
                 type="text"
@@ -36,6 +36,27 @@
             </div>
           </div>
         </form>
+        <div class="row">
+          <div class="col-4">
+            <img
+              src="img/sunny.png"
+              id="weather-icon"
+              alt="icon showing current weather"
+            />
+          </div>
+          <div class="col-8">
+            <h3>City Name</h3>
+            <span class="degree-section"
+              ><span id="degrees">35</span>
+              <span id="units">°C|°F</span>
+            </span>
+            <ul>
+              <li id="weatherDescription">☀️ sunny</li>
+              <li id="windElement">🌬 wind</li>
+              <li id="humidityElement">💦 humidity</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
     <script src="src/html.js"></script>
