@@ -6,28 +6,39 @@
   margin: 50px auto;
   padding: 20px;
 }
-
-h3 {
+.col-4 {
+  padding: 13px;
+}
+.col-8 {
+  padding: 13px;
+}
+.city-name {
   margin: 0px;
+  font-size: 30px;
 }
 .col-sm-6 {
   padding-right: 0px;
 }
 
 #search-form {
-  margin-bottom: 50px;
+  margin-bottom: 54px;
 }
 #weather-icon {
-  margin: 15px;
+  display: block;
+  margin: 0px auto;
+}
+.date-section {
+  text-align: center;
+  margin: auto;
 }
 #degrees {
-  font-size: 40px;
+  font-size: 45px;
 }
 
 #units {
   font-size: 13px;
   position: relative;
-  top: -15px;
+  top: -19px;
   left: -7px;
 }
 ul {
