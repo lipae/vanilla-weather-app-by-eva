@@ -37,9 +37,10 @@ function handlePosition(position) {
   axios.get(apiUrlLatLon).then(showCurrentLocationWeather);
 }
 
-function fetchLocation() {
+function fetchLocation(event) {
+  event.preventDefault();
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
-fetchLocation();
-// let locationButton = document.querySelector("#location-button");
-// locationButton.addEventListener("click", fetchLocation);
+
+let locationButton = document.querySelector("#location-button");
+locationButton.addEventListener("click", fetchLocation);
