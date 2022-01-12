@@ -1,4 +1,5 @@
 function sanDiegoWeather(response) {
+  document.querySelector(".city-name").innerHTML = response.data.name;
   document.querySelector("#degrees").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -44,3 +45,29 @@ function fetchLocation(event) {
 
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", fetchLocation);
+
+function showNewCityWeather(response) {
+  document.querySelector(".city-name").innerHTML = response.data.name;
+  document.querySelector("#degrees").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  document.querySelector("#weatherDescription").innerHTML =
+    response.data.weather[0].description;
+  document.querySelector("#windElement").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  document.querySelector("#humidityElement").innerHTML =
+    response.data.main.humidity;
+}
+
+function showSearchCityWeather(event) {
+  event.preventDefault();
+  let newCity = document.querySelector("#city-searchfield").value;
+  console.log(newCity);
+  apiKey = "2ef21ee4568e04db5d3af37dfef78d7b";
+  apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${newCity}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(sanDiegoWeather);
+}
+
+let searchButton = document.querySelector("#search-button");
+searchButton.addEventListener("click", showSearchCityWeather);
