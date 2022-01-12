@@ -6,8 +6,6 @@
 .app-size {
   font-family: "Courier New", Courier, monospace;
   width: 600px;
-
-  /* border: solid 1px #afb4b9; */
   border-radius: 4px;
   margin: 0 auto;
   padding: 20px;
@@ -16,11 +14,10 @@
 .background {
   position: relative;
   z-index: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 #background-image {
-  background-size: cover;
-  /* background-position: center; */
-  background-repeat: no-repeat;
   width: 100%;
 }
 .icon-section {
@@ -78,4 +75,9 @@ ul {
 
 #speedunit {
   text-transform: lowercase;
+}
+
+#coded-by {
+  font-size: 14px;
+  font-family: "Courier New", Courier, monospace;
 }
