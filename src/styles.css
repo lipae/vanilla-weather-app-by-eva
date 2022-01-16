@@ -42,6 +42,7 @@
 #weather-icon {
   display: block;
   margin: 0px auto;
+  width: 120px;
 }
 .date-section {
   text-align: center;

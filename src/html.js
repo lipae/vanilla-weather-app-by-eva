@@ -4,6 +4,7 @@ let today = new Date(timeElapsed);
 document.querySelector("#date").innerHTML = today.toUTCString();
 
 function showCurrentWeather(response) {
+  let icon = response.data.weather[0].icon;
   document.querySelector(".city-name").innerHTML = response.data.name;
   document.querySelector("#degrees").innerHTML = Math.round(
     response.data.main.temp
@@ -16,11 +17,14 @@ function showCurrentWeather(response) {
   document.querySelector("#humidityElement").innerHTML =
     response.data.main.humidity;
 
-  // function weatherIcon(response) {
-
-  // }
-  //     document.querySelector("#weather-icon").innerHTML =
+  document
+    .querySelector("#weather-icon")
+    .setAttribute("src", `http://openweathermap.org/img/wn/${icon}@2x.png`);
+  document
+    .querySelector("#weather-icon")
+    .setAttribute("alt", response.data.weather[0].description);
 }
+
 city = "San Diego";
 apiKey = "2ef21ee4568e04db5d3af37dfef78d7b";
 apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
