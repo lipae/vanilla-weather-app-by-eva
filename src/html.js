@@ -4,11 +4,11 @@ let today = new Date(timeElapsed);
 document.querySelector("#date").innerHTML = today.toUTCString();
 
 function showCurrentWeather(response) {
-  let icon = response.data.weather[0].icon;
   document.querySelector(".city-name").innerHTML = response.data.name;
   document.querySelector("#degrees").innerHTML = Math.round(
     response.data.main.temp
   );
+
   document.querySelector("#weatherDescription").innerHTML =
     response.data.weather[0].description;
   document.querySelector("#windElement").innerHTML = Math.round(
@@ -16,7 +16,7 @@ function showCurrentWeather(response) {
   );
   document.querySelector("#humidityElement").innerHTML =
     response.data.main.humidity;
-
+  let icon = response.data.weather[0].icon;
   document
     .querySelector("#weather-icon")
     .setAttribute("src", `https://openweathermap.org/img/wn/${icon}@2x.png`);
@@ -56,3 +56,12 @@ function showSearchCityWeather(event) {
 
 let searchButton = document.querySelector("#search-button");
 searchButton.addEventListener("click", showSearchCityWeather);
+
+function changeUnit() {
+  let fahrenheit = response.data.main.temp * 1.8 + 32;
+  document.querySelector("#degrees").innerHTML = Math.round(fahrenheit);
+}
+
+document
+  .querySelector("#fahrenheit-link")
+  .addEventListener("click", changeUnit);
