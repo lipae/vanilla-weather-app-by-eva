@@ -57,11 +57,25 @@ function showSearchCityWeather(event) {
 let searchButton = document.querySelector("#search-button");
 searchButton.addEventListener("click", showSearchCityWeather);
 
-function changeUnit() {
-  let fahrenheit = response.data.main.temp * 1.8 + 32;
+function changeToFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheit = celsiusTemperature * 1.8 + 32;
   document.querySelector("#degrees").innerHTML = Math.round(fahrenheit);
+  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.remove("active");
 }
 
-document
-  .querySelector("#fahrenheit-link")
-  .addEventListener("click", changeUnit);
+function changeToCelsius(event) {
+  event.preventDefault();
+  document.querySelector("#degrees").innerHTML = celsiusTemperature;
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", changeToFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", changeToCelsius);
