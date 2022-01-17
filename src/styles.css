@@ -67,14 +67,14 @@
 }
 
 #units {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   position: relative;
   top: -24px;
   left: -7px;
 }
 
-.active {
+/* .active {
   color: black;
   text-decoration: none;
 }
@@ -82,7 +82,7 @@
 .active:hover {
   cursor: default;
   color: black;
-}
+} */
 
 ul {
   list-style: none;
