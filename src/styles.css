@@ -5,12 +5,16 @@
 }
 .app-size {
   font-family: "Courier New", Courier, monospace;
-  width: 600px;
+  min-width: 600px;
   border-radius: 4px;
   margin: 0 auto;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.5);
 }
+#coded-by {
+  position: absolute;
+}
+
 .background {
   position: relative;
   z-index: 1;
@@ -19,6 +23,7 @@
 }
 #background-image {
   width: 100%;
+  min-width: 760px;
 }
 .icon-section {
   padding: 7px 13px;
@@ -87,6 +92,20 @@ ul {
 
 #speedunit {
   text-transform: lowercase;
+}
+
+#forecast-section {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 14px;
+}
+
+#weekday {
+  margin: 0px;
+}
+
+#weather-icon-forecast img {
+  width: 70px;
 }
 
 #coded-by {

@@ -26,7 +26,7 @@
         <div class="app-size" id="container-position">
           <form>
             <div class="row" id="search-form">
-              <div class="col-sm-6 searchbar-section">
+              <div class="col-6 searchbar-section">
                 <input
                   type="text"
                   class="form-control"
@@ -34,7 +34,7 @@
                   placeholder="Current weather in..."
                 />
               </div>
-              <div class="col-sm-2">
+              <div class="col-2">
                 <button
                   id="search-button"
                   type="submit"
@@ -43,7 +43,7 @@
                   Search
                 </button>
               </div>
-              <div class="col-sm-4">
+              <div class="col-4">
                 <button
                   id="location-button"
                   type="submit"
@@ -88,6 +88,22 @@
                   ><span>%</span>
                 </li>
               </ul>
+            </div>
+          </div>
+          <div class="row" id="forecast-section">
+            <div class="col-2">
+              <p id="weekday">weekday</p>
+              <div id="weather-icon-forecast">
+                <img
+                  src="http://openweathermap.org/img/wn/10d@2x.png"
+                  alt="weather-description"
+                />
+              </div>
+              <span id="max-min">
+                <span id="max">35</span>
+                |
+                <span id="min">5</span>
+              </span>
             </div>
           </div>
         </div>
