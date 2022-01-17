@@ -5,9 +5,9 @@ document.querySelector("#date").innerHTML = today.toUTCString();
 
 function showCurrentWeather(response) {
   document.querySelector(".city-name").innerHTML = response.data.name;
-  document.querySelector("#degrees").innerHTML = Math.round(
-    response.data.main.temp
-  );
+
+  celsiusTemperature = response.data.main.temp;
+  document.querySelector("#degrees").innerHTML = Math.round(celsiusTemperature);
 
   document.querySelector("#weatherDescription").innerHTML =
     response.data.weather[0].description;
@@ -67,7 +67,7 @@ function changeToFahrenheit(event) {
 
 function changeToCelsius(event) {
   event.preventDefault();
-  document.querySelector("#degrees").innerHTML = celsiusTemperature;
+  document.querySelector("#degrees").innerHTML = Math.round(celsiusTemperature);
   fahrenheitLink.classList.remove("active");
   celsiusLink.classList.add("active");
 }
