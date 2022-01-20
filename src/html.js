@@ -4,20 +4,25 @@ let today = new Date(timeElapsed);
 document.querySelector("#date").innerHTML = today.toUTCString();
 
 function showForecast(response) {
-  console.log(response);
+  console.log(response.data);
   let forecastSection = document.querySelector("#forecast-section");
   let forecastIcon = response.data.daily[0].weather[0].icon;
-  let weekday = response.data.daily[0];
+  let min = Math.round(response.data.daily[0].temp.min);
+  let max = Math.round(response.data.daily[0].temp.max);
+  let weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  //let weekday = weekdays[response.data.daily];
 
   //empty string of forecastHTML ist notwendig,
   //um später die wochentage zu loopen,
   //und die folgenden wochentage der reihe nach zu zeigen,
   //ohne sich gegenseitig zu überschreiben
 
-  let forecastHTML = "";
-  forecastHTML =
-    forecastHTML +
-    `
+  let forecastHTML = `<div class="row">`;
+  weekdays.forEach(function (weekday) {
+    forecastHTML =
+      forecastHTML +
+      `
     <div class="col-2">
       <p id="weekday">${weekday}</p>
         <div id="weather-icon-forecast">
@@ -27,28 +32,13 @@ function showForecast(response) {
         />
         </div>
       <span id="max-min">
-      <span id="max">35</span>|<span id="min">5</span>
+      <span id="max">${max}</span>|<span id="min">${min}</span>
       </span>
     </div>
   `;
-  forecastHTML =
-    forecastHTML +
-    `
-    <div class="col-2">
-    <p id="weekday">${weekday}</p>
-    <div id="weather-icon-forecast">
-      <img
-        src="https://openweathermap.org/img/wn/${forecastIcon}@2x.png"
-        alt="weather-description"
-      />
-    </div>
-    <span id="max-min">
-      <span id="max">35</span>|<span id="min">5</span>
-    </span>
-    </div>
-  `;
 
-  forecastSection.innerHTML = forecastHTML;
+    forecastSection.innerHTML = forecastHTML;
+  });
 }
 
 function showCurrentWeather(response) {
